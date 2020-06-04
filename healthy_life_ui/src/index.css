@@ -1,0 +1,22 @@
+div {
+  text-align: center;
+}
+h1 { 
+  text-align: center;
+}
+.list {
+  display: flex;
+  margin: 10px;
+  border: 3px double black;
+}
+.elem {
+  padding: 10px;
+  border-right: 2px solid black;
+}
+.delete-button {
+margin-left: 5px;
+}
+.update-button {
+  margin-left: 5px;
+}
+
