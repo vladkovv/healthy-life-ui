@@ -4,6 +4,14 @@ div {
 h1 { 
   text-align: center;
 }
+.header {
+display: flex;
+background-color: #7418c4;
+height: 50px;
+line-height: 50px;
+justify-content: space-around;
+}
+
 .list {
   display: flex;
   margin: 10px;
@@ -19,4 +27,5 @@ margin-left: 5px;
 .update-button {
   margin-left: 5px;
 }
+
 

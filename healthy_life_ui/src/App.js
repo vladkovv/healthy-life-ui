@@ -1,7 +1,11 @@
 import React from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Header from './components/header';
 import Users from './components/users';
+import Authorization from './components/authorization';
+import Main from './components/main';
+import { BrowserRouter, Route } from 'react-router-dom';
 
 const USERS_URL =  'http://healthy-life-kotlin.herokuapp.com/api/v1/users';
 
@@ -39,9 +43,19 @@ class App extends React.Component {
 
   render() {
   return (
+    <BrowserRouter>
     <div>
-    <Users getUsers = {this.gettingData} onDelete = {this.deleteUser} users = {this.state.users} />
+    <Header />
+    <div className="app-content">
+    <Route exact path='/' component={Main}/>
+    <Route path='/auth' component={Authorization}/>
+  <Route path='/users' render={(props) => <Users getUsers = {this.gettingData} onDelete = {this.deleteUser} users = {this.state.users}  {...props}/>}/>
+    {/* <Main />
+    <Authorization />
+    <Users getUsers = {this.gettingData} onDelete = {this.deleteUser} users = {this.state.users} /> */}
+    </div> 
     </div>
+    </BrowserRouter>
   );
 }}
 
