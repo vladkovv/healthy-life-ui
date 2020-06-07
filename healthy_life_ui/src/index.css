@@ -28,3 +28,49 @@ margin-left: 5px;
   margin-left: 5px;
 }
 
+.profile-page-body {
+  display: flex;
+  background-color: #DCDCDC;
+  justify-content: center;
+  height: 650px;
+}
+
+.profile-content {
+  background-color: #FFFFFF;
+  margin-top: 25px;
+  height: 80vh;
+  width: 70%;
+}
+
+.profile-header {
+  background-color: #EFEFEF;
+  height: 15%;
+  display: flex;
+  
+}
+.profile-header-name {
+  padding-top: 12px;
+  width: 35%;
+  border-right: 2px solid #FFFFFF;
+}
+
+.profile-private-first {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
+}
+.profile-private-second {
+  margin-top: 40px;
+  margin-left: 30px;
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
+}
+.profile-private-third {
+  margin-top: 40px;
+  margin-left: 30px;
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
+}

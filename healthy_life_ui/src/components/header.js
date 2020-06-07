@@ -14,6 +14,10 @@ const Header = (props) => {
             </div>
 
             <div>
+                <NavLink to="/profile">Профиль</NavLink>
+            </div>
+
+            <div>
                 <NavLink to="/users">Пользователи</NavLink>
             </div>
             

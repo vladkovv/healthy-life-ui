@@ -1,6 +1,7 @@
 import React from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import {Redirect} from 'react-router-dom';
 
 class Authorization extends React.Component {
     state = {login: "", password: ""}
@@ -23,11 +24,18 @@ class Authorization extends React.Component {
             body: JSON.stringify({username: this.state.login, password: this.state.password})
         })
         let result = await response.json();
-        console.log(result);
 
+        if(result.token) {
+        this.props.onAuth(result.id)
+        }
+        
+        else {
+          alert('Проверьте логин/пароль')
+        }
     }
 
     render() {
+      if(this.props.status) return <Redirect to={'/'} />
     return (
         <Form>
         <Form.Group controlId="formBasicEmail">

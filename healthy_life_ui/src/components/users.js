@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
+import { Redirect } from 'react-router-dom';
 
 class Users extends React.Component{
     
@@ -35,6 +36,11 @@ class Users extends React.Component{
         this.gettingData()   
     }
 render() {
+  
+  if(!this.props.status) {
+    return <Redirect to={'/auth'} />
+  }
+
 return(
 <div>
     <h2>Список пользователей</h2>
