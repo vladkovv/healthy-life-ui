@@ -8,12 +8,10 @@ class Authorization extends React.Component {
 
     onLoginChange = (event) => {
         this.setState({login: event.target.value})
-        console.log(this.state)
     }
 
     onPasswordChange = (event) => {
         this.setState({password: event.target.value})
-        console.log(this.state)
     }
 
     onAuth = async (e) => {
@@ -37,7 +35,8 @@ class Authorization extends React.Component {
     render() {
       if(this.props.status) return <Redirect to={'/'} />
     return (
-        <Form>
+      <div className="auth-body">
+        <Form className="auth-form">
         <Form.Group controlId="formBasicEmail">
           <Form.Label>Логин</Form.Label>
           <Form.Control  type="text" placeholder="Введите имя пользователя" onChange={this.onLoginChange} />
@@ -54,6 +53,7 @@ class Authorization extends React.Component {
           Submit
         </Button>
       </Form>
+      </div>
     )
 }}
 

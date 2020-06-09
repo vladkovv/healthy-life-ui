@@ -27,7 +27,7 @@ class Users extends React.Component{
           users: newState
         })
     
-        // return await fetch(`${USERS_URL}/${removeUserId}`, {
+        // return await fetch(`${this.props.url}/users/${removeUserId}`, {
         //   method: 'DELETE'
         // })
       }

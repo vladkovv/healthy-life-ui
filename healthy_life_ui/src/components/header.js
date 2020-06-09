@@ -1,8 +1,16 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-const Header = (props) => {
 
+const Header = (props) => {
+    let authButton;
+
+    if(props.status) {
+        authButton = <NavLink to="/">Выход</NavLink>
+    } else {
+        authButton = <NavLink to="/auth">Авторизация</NavLink>
+    }
+ 
     return (
         <div className="header">
             <div>
@@ -10,7 +18,10 @@ const Header = (props) => {
             </div>
 
             <div>
-                <NavLink to="/auth">Авторизация</NavLink>
+                {authButton}
+            </div>
+            <div>
+                <NavLink to="/reg">Регистрация</NavLink>
             </div>
 
             <div>

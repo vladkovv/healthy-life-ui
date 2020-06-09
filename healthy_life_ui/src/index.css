@@ -74,3 +74,49 @@ margin-left: 5px;
   justify-content: center;
   justify-content: space-around;
 }
+
+.reg-body {
+  display: flex;
+  justify-content: center;
+  height: 93vh;
+  background-color: #DCDCDC;
+}
+
+.reg-window {
+  margin-top: 25px;
+  width: 35vw;
+  height: 75vh;
+  box-shadow: 0 0 3px;
+  background-color: #FFFFFF;
+}
+.reg-window-content {
+  margin-top: 15px;
+}
+.reg-window-content > input {
+  width: 80%;
+  height: 35px;
+  margin-bottom: 25px;
+}
+
+.reg-window-content > select {
+  width: 80%;
+  height: 35px;
+}
+
+.reg-button {
+  margin-top: 35px;
+}
+
+.auth-body {
+  background-color: #DCDCDC;
+  height: 93vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.auth-form {
+  /* background-color: #FFFFFF; */
+  margin-bottom: 40px;
+  height: 40vh;
+  width: 400px;
+}
