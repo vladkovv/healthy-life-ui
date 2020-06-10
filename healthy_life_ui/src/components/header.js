@@ -10,7 +10,7 @@ const Header = (props) => {
                 <NavLink to="/">Home</NavLink>
             </div>
 
-            {props.status ||
+                        {props.status ||
             <div>
                 <NavLink to="/reg">SIGN UP</NavLink>
             </div>
@@ -23,12 +23,12 @@ const Header = (props) => {
 }
             {props.status &&
             <div>
-                <NavLink to="/profile">Профиль</NavLink>
+                <NavLink to="/profile">Profile</NavLink>
             </div>
 }
             {props.status &&
             <div>
-                <NavLink to="/users">Пользователи</NavLink>
+                <NavLink to="/users">Users</NavLink>
             </div>
 }
             

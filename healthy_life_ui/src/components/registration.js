@@ -1,70 +1,57 @@
 import React from 'react';
-import { Button } from 'react-bootstrap';
+import { Redirect } from 'react-router-dom';
 
 class Registration extends React.Component {
 
-    state = {username: '', password: '', firstName: '', lastName: '', email: '', gender: ''}
+    state = {username: '', password: '',  email: '', success: ''}
 
     handleUserName = (event) => {
         this.setState({username: event.target.value})
-        console.log(this.state)
     }
     
     handlePassword = (event) => {
         this.setState({password: event.target.value})
-        console.log(this.state)
-    }
-
-    handleFirstName = (event) => {
-        this.setState({firstName: event.target.value})
-        console.log(this.state)
-    }
-
-    handleLastName = (event) => {
-        this.setState({lastName: event.target.value})
-        console.log(this.state)
     }
 
     handleEmail = (event) => {
         this.setState({email: event.target.value})
-        console.log(this.state)
     }
 
-    handleGender = (event) => {
-        this.setState({gender: event.target[event.target.selectedIndex].value})
-        console.log(this.state)
-    }
 
     onRegistration = async () => {
-        return await fetch(`${this.props.url}/users`, {
+        let response = await fetch(`${this.props.url}/users`, {
             method: "POST",
             headers: {"Content-Type":"application/json"},
-            body: JSON.stringify({username: this.state.username, password: this.state.password, firstName: this.state.firstName, lastName: this.state.lastName, email: this.state.email, gender: this.state.gender})
+            body: JSON.stringify({username: this.state.username, password: this.state.password,  email: this.state.email})
         })
+        let result = await response.json();
+
+        if(result.username) {
+            this.setState({success: true})
+        }
     }
 
     render() {
+        if(this.state.success) return(<Redirect to={'/auth'} />)
+        
         return(
             <div className="reg-body">
-                <div className='reg-window'>
-                    <h4>Регистрация</h4>  
-                    <div className="reg-window-content">
-                        <input placeholder='Введите ваш email...' onChange={this.handleEmail}/>
-                        <input placeholder='Придумайте себе имя пользователя...' onChange={this.handleUserName}/>
-                        <input placeholder='Придумайте пароль...' onChange={this.handlePassword}/>
-                        <input placeholder='Введите ваше Имя...' onChange={this.handleFirstName}/>
-                        <input placeholder='Введите вашу Фамилию...' onChange={this.handleLastName}/>
-                        <select onChange={this.handleGender}>
-                            <option>Укажите ваш пол:</option>
-                            <option>Male</option>
-                            <option>Female</option>
-                        </select>
-                        <Button variant='success' className='reg-button' onClick={this.onRegistration}>
-                            Зарегистрироваться
-                        </Button>
-                    </div>  
-                </div>
-            </div>
+        <div className="reg-form">
+          <div className="reg-content">
+          <h1>Sign Up</h1>
+          <div className="reg-fields">
+          <h2>Email</h2>
+            <input type='email' onChange={this.handleEmail} />
+            <h2>Username</h2>
+            <input type='text' onChange={this.handleUserName} />
+            <h2>Password</h2>
+            <input type="password" onChange={this.handlePassword}/>
+          </div>
+            <button className="auth-button"  onClick={this.onRegistration}>SIGN UP</button>
+          </div>
+        </div>
+
+      </div>
         )
     }
 }

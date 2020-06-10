@@ -80,36 +80,51 @@ margin-left: 5px;
 }
 
 .reg-body {
+  background-color: #E9ECF1;
+  height: 93vh;
   display: flex;
   justify-content: center;
-  height: 93vh;
-  background-color: #DCDCDC;
+  align-items: center;
 }
 
-.reg-window {
-  margin-top: 25px;
-  width: 35vw;
-  height: 75vh;
-  box-shadow: 0 0 3px;
+.reg-form {
   background-color: #FFFFFF;
-}
-.reg-window-content {
-  margin-top: 15px;
-}
-.reg-window-content > input {
-  width: 80%;
-  height: 35px;
-  margin-bottom: 25px;
-}
-
-.reg-window-content > select {
-  width: 80%;
-  height: 35px;
-}
-
-.reg-button {
-  margin-top: 35px;
-}
+  border-radius: 10px;
+  width: 320px;
+  height: 450px;
+  box-shadow: 0 0 3px rgba(0,0,0,0.5);
+  
+  }
+  .reg-content {
+    margin-left: 35px;
+    margin-top: 30px;
+  }
+  
+  .reg-fields {
+    margin-top: 50px;
+  }
+  
+  .reg-content > h1 {
+      font-size: xx-large;
+      font-weight: 600;
+  }
+  .reg-fields > h2 {
+    font-size: small;
+    font-weight: 500;
+    margin-top: 25px;
+  }
+  
+  .reg-fields > input {
+    width: 250px;
+    height: 32px;
+    border: 1px solid #D9D9D9;
+    border-radius: 5px;
+  }
+  .reg-fields > input:focus {
+    outline: none;
+    border: 2px solid #CDDAEB;
+  }
+  
 
 .auth-body {
   background-color: #E9ECF1;
