@@ -1,6 +1,4 @@
 import React from 'react';
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
 import {Redirect} from 'react-router-dom';
 
 class Authorization extends React.Component {
@@ -36,23 +34,19 @@ class Authorization extends React.Component {
       if(this.props.status) return <Redirect to={'/'} />
     return (
       <div className="auth-body">
-        <Form className="auth-form">
-        <Form.Group controlId="formBasicEmail">
-          <Form.Label>Логин</Form.Label>
-          <Form.Control  type="text" placeholder="Введите имя пользователя" onChange={this.onLoginChange} />
-          <Form.Text className="text-muted">
-            Мы никогда не поделимся ни с кем вашими данными.
-          </Form.Text>
-        </Form.Group>
-      
-        <Form.Group controlId="formBasicPassword">
-          <Form.Label>Пароль</Form.Label>
-          <Form.Control type="password" placeholder="Введите пароль" onChange={this.onPasswordChange} />
-        </Form.Group>
-        <Button variant="primary" type="submit" onClick={this.onAuth}>
-          Submit
-        </Button>
-      </Form>
+        <div className="auth-form">
+          <div className="auth-content">
+          <h1>Login</h1>
+          <div className="auth-fields">
+            <h2>Username</h2>
+            <input type='text' onChange={this.onLoginChange} />
+            <h2>Password</h2>
+            <input type="password" onChange={this.onPasswordChange}/>
+          </div>
+            <button className="auth-button"  onClick={this.onAuth}>LOGIN</button>
+          </div>
+        </div>
+
       </div>
     )
 }}

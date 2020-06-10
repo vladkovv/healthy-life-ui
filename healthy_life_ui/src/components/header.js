@@ -3,34 +3,34 @@ import { NavLink } from 'react-router-dom';
 
 
 const Header = (props) => {
-    let authButton;
-
-    if(props.status) {
-        authButton = <NavLink to="/">Выход</NavLink>
-    } else {
-        authButton = <NavLink to="/auth">Авторизация</NavLink>
-    }
  
     return (
-        <div className="header">
+        <div className="header-before-auth">
             <div>
-                <NavLink to="/">Главная</NavLink>
+                <NavLink to="/">Home</NavLink>
             </div>
 
+            {props.status ||
             <div>
-                {authButton}
+                <NavLink to="/reg">SIGN UP</NavLink>
             </div>
-            <div>
-                <NavLink to="/reg">Регистрация</NavLink>
-            </div>
+}
 
+            {props.status  ||
+            <div>
+                <NavLink to="/auth">SIGN IN</NavLink>
+            </div>
+}
+            {props.status &&
             <div>
                 <NavLink to="/profile">Профиль</NavLink>
             </div>
-
+}
+            {props.status &&
             <div>
                 <NavLink to="/users">Пользователи</NavLink>
             </div>
+}
             
         </div>
     )
