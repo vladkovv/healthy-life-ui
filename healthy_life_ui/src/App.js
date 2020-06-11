@@ -13,24 +13,33 @@ const URL =  'http://healthy-life-kotlin.herokuapp.com/api/v1';
 
 class App extends React.Component {
 
-  state = {isAuth: false, currId: ''}
+  state = {currId: '', token: ''}
 
-  handleAuth = async (id) => {
-    this.setState({isAuth: true})
+  handleAuth = async (id, token) => {
     this.setState({currId: id})
+    this.setState({token: token})
+    localStorage.setItem("token", token)
+    localStorage.setItem("id", id)
+  }
+
+  componentDidMount() {
+    if(localStorage.token) {
+      this.setState({token: localStorage.getItem("token")});
+      this.setState({currId: localStorage.getItem("id")});
+    }
   }
 
   render() {
   return (
     <BrowserRouter>
     <div>
-    <Header status={this.state.isAuth} />
+    <Header  status={this.state.token} />
     <div className="app-content">
     <Route exact path='/' component={Main}/>
-    <Route path='/auth' render={(props) => <Authorization url={URL} onAuth={this.handleAuth} status={this.state.isAuth}  {...props}/>}/>
-    <Route path='/reg' render={(props) => <Registration url={URL} status={this.state.isAuth}  {...props}/>}/>
-    <Route path='/profile' render={(props) => <Profile url={URL} status={this.state.isAuth} id={this.state.currId} {...props}/>} />
-    <Route path='/users' render={(props) => <Users url={URL} status={this.state.isAuth}  {...props}/>}/>
+    <Route path='/auth' render={(props) => <Authorization url={URL} onAuth={this.handleAuth} status={this.state.token}  {...props}/>}/>
+    <Route path='/reg' render={(props) => <Registration url={URL} status={this.state.token}  {...props}/>}/>
+    <Route path='/profile' render={(props) => <Profile url={URL} status={this.state.token} id={this.state.currId} {...props}/>} />
+    <Route path='/users' render={(props) => <Users url={URL} status={this.state.token}  {...props}/>}/>
     
     </div> 
     </div>

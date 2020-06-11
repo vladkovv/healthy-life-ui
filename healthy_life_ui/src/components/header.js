@@ -3,6 +3,26 @@ import { NavLink } from 'react-router-dom';
 
 
 const Header = (props) => {
+
+    if(!props.status) {
+        return (
+            <div className="header-before-auth">
+
+            <div>
+                <NavLink to="/">Home</NavLink>
+            </div>
+               
+            <div>
+                <NavLink to="/reg">SIGN UP</NavLink>
+            </div>
+
+            <div>
+                <NavLink to="/auth">SIGN IN</NavLink>
+            </div>
+
+    </div>
+        )
+    }
  
     return (
         <div className="header-before-auth">
@@ -10,27 +30,14 @@ const Header = (props) => {
                 <NavLink to="/">Home</NavLink>
             </div>
 
-                        {props.status ||
-            <div>
-                <NavLink to="/reg">SIGN UP</NavLink>
-            </div>
-}
-
-            {props.status  ||
-            <div>
-                <NavLink to="/auth">SIGN IN</NavLink>
-            </div>
-}
-            {props.status &&
             <div>
                 <NavLink to="/profile">Profile</NavLink>
             </div>
-}
-            {props.status &&
+
             <div>
                 <NavLink to="/users">Users</NavLink>
             </div>
-}
+
             
         </div>
     )

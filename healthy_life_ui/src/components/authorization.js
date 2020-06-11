@@ -22,7 +22,7 @@ class Authorization extends React.Component {
         let result = await response.json();
 
         if(result.token) {
-        this.props.onAuth(result.id)
+        this.props.onAuth(result.id, result.token)
         }
         
         else {
