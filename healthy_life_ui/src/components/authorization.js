@@ -1,5 +1,6 @@
 import React from 'react';
 import {Redirect} from 'react-router-dom';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 
 class Authorization extends React.Component {
     state = {login: "", password: ""}
