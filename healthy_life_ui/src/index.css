@@ -25,12 +25,6 @@ line-height: 77px;
   padding: 10px;
   border-right: 2px solid black;
 }
-.delete-button {
-margin-left: 5px;
-}
-.update-button {
-  margin-left: 5px;
-}
 
 .profile-page-body {
   display: flex;
@@ -190,7 +184,7 @@ box-shadow: 0 0 3px rgba(0,0,0,0.5);
 }
 
 .users-body {
-  background-color: #E9ECF1;
+  background-color: #ffffff;
   min-height: 93vh;
   width: 100%;
   display: flex;
@@ -202,13 +196,37 @@ box-shadow: 0 0 3px rgba(0,0,0,0.5);
   margin-top: 20px;
   width: 1200px;
 }
-td {
-  width: 200px;
-  border: 1px solid grey;
+tr {
+  border-bottom: 2px solid #E9ECF1;
 }
+
+thead > tr {
+  border:none;
+}
+td {
+  height: 50px;
+  width: 270px;
+}
+
+td:first-child {
+  width: 60px;
+}
+
 .header-before-auth > div > a {
   color: #ffffff !important;
   font-family: 'Montserrat', sans-serif;
   font-size: large;
   font-weight: normal;
+}
+.users-icon {
+  color: #47B8E1;
+}
+.users-button {
+  width: 5px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.pagination {
+  margin-top: 30px;
 }

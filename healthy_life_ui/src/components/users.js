@@ -1,40 +1,65 @@
 import React from 'react';
-import Button from 'react-bootstrap/Button';
 import { Redirect } from 'react-router-dom';
+import CreateIcon from '@material-ui/icons/Create';
+import HighlightOffIcon from '@material-ui/icons/HighlightOff';
+import Pagination, { usePagination } from '@material-ui/lab/Pagination';
 
 class Users extends React.Component{
     
     state = {
-        users: []
+        users: [],
+        currPage: 1,
+        countPages: 0
     }
 
     gettingData = async () => {
-        const response = await fetch(`${this.props.url}/users`);
+        const response = await fetch(`${this.props.url}/users?size=5&page=${this.state.currPage}`);
         const data =  await response.json();
         
-        data.map(item => {
+        if(!this.state.countPages) {
+          this.setState({
+            countPages: Math.ceil(data.userCount/5)
+          })
+        }
+
+        data.usersFromPagination.map(item => {
           const obj = {id: item.id, firstName: item.firstName, lastName: item.lastName, username: item.username, email: item.email}
           this.setState({
-           users: [...this.state.users, obj]
+           users: [...this.state.users, obj],
           })
         })
       }
 
       deleteUser = async (e) => {
         const removeUserId = Number(e.target.id);
+        console.log(e.target.id)
         const newState = this.state.users.filter((user) => user.id !== removeUserId);
         this.setState({
           users: newState
         })
-    
         // return await fetch(`${this.props.url}/users/${removeUserId}`, {
         //   method: 'DELETE'
         // })
       }
 
+      handlePagehanged = (page) => {
+        this.setState({
+          currPage: page
+        })
+      }
+
+
     componentDidMount() {
-        this.gettingData()   
+        this.gettingData()  
+
     }
+
+    // componentDidUpdate() {
+    //   this.setState({
+    //     users: []
+    //   })
+    //   this.gettingData()
+    // }
 render() {
   
   if(!this.props.status) {
@@ -63,27 +88,19 @@ return(
           <td>{item.firstName}</td>
           <td>{item.lastName}</td>
           <td>{item.email}</td>
-          <button>Подробнее</button>
-          <button>Удалить</button>
+          <td className="users-button">
+          <CreateIcon id={item.id} className="users-icon" />
+          </td>
+          <td id={item.id} className="users-button" onClick={this.deleteUser}>
+          <HighlightOffIcon id={item.id} className="users-icon" />
+          </td>
         </tr>
   )}
           </tbody>
         </table>
-
-        // this.state.users.map(item => 
-        // <div key={item.id} className='list'>
-        //  <div className="elem">id: {item.id}</div> 
-        //  <div className="elem">Имя пользователя: {item.username}</div> 
-        //  <div className="elem">Имя: {item.firstName}</div> 
-        //  <div className="elem">Фамилия: {item.lastName}</div>   
-        //  <div className="elem">Рост: {item.height}см</div> 
-        //  <div className="elem">Вес: {item.weight}кг</div> 
-        //  <Button variant="outline-success" className ='update-button'>Изменить</Button>
-        //  <Button variant="outline-danger" className ='delete-button' id={item.id} onClick={this.deleteUser}>Удалить</Button>
-        // </div>
-        // )
     }
 </div>
+    <Pagination count={this.state.countPages} onChange={(event, page) => this.handlePagehanged(page.toString())} className="pagination"/>
 </div>
 );
 }}
