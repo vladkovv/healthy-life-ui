@@ -15,7 +15,7 @@ class Users extends React.Component{
     gettingData = async () => {
         const response = await fetch(`${this.props.url}/users?size=5&page=${this.state.currPage}`);
         const data =  await response.json();
-        
+
         if(!this.state.countPages) {
           this.setState({
             countPages: Math.ceil(data.userCount/5)
@@ -42,9 +42,12 @@ class Users extends React.Component{
         // })
       }
 
-      handlePagehanged = (page) => {
+      handlePagehanged = async (page) => {
         this.setState({
-          currPage: page
+          currPage: page,
+          users: []
+        }, () => {
+          this.gettingData()
         })
       }
 
