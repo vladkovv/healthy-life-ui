@@ -4,12 +4,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './components/header';
 import Users from './components/users';
 import Authorization from './components/authorization';
-import Main from './components/main';
+import Trainings from './components/main';
 import Profile from './components/profile';
 import { BrowserRouter, Route } from 'react-router-dom';
 import Registration from './components/registration';
 
-const URL =  'http://healthy-life-kotlin.herokuapp.com/api/v1';
+const URL =  'https://healthy-life-kotlin.herokuapp.com/api/v1';
 
 class App extends React.Component {
 
@@ -35,7 +35,7 @@ class App extends React.Component {
     <div>
     <Header  status={this.state.token} />
     <div className="app-content">
-    <Route exact path='/' component={Main}/>
+    <Route exact path='/' render={(props) => <Trainings url={URL} status={this.state.token}  {...props}/>}/>
     <Route path='/auth' render={(props) => <Authorization url={URL} onAuth={this.handleAuth} status={this.state.token}  {...props}/>}/>
     <Route path='/reg' render={(props) => <Registration url={URL} status={this.state.token}  {...props}/>}/>
     <Route path='/profile' render={(props) => <Profile url={URL} status={this.state.token} id={this.state.currId} {...props}/>} />

@@ -1,6 +1,9 @@
-
+* {
+  font-family: 'Roboto', sans-serif;
+}
 .header-before-auth {
 display: block;
+
 background-color: #444444;
 height: 77px;
 line-height: 77px;
@@ -14,16 +17,6 @@ line-height: 77px;
   float: left;
   margin-right: 0;
   margin-left: 20px;
-}
-
-.list {
-  display: flex;
-  margin: 10px;
-  border: 3px double black;
-}
-.elem {
-  padding: 10px;
-  border-right: 2px solid black;
 }
 
 .profile-page-body {
@@ -213,20 +206,119 @@ td:first-child {
 }
 
 .header-before-auth > div > a {
-  color: #ffffff !important;
+  color: #ffffff;
+  text-decoration: none;
   font-family: 'Montserrat', sans-serif;
   font-size: large;
   font-weight: normal;
 }
+
+.header-before-auth > div > a:hover {
+color: #A2A2A2;
+}
+
 .users-icon {
   color: #47B8E1;
 }
 .users-button {
-  width: 5px;
-  margin-left: 5px;
+  width: 10px;
+  padding-right: 10px;
   cursor: pointer;
 }
 
 .pagination {
   margin-top: 30px;
+
 }
+.MuiPagination-ul > li {
+  outline: none;
+}
+
+.MuiPagination-ul > li > button:focus {
+  outline: none
+}
+
+.trainings-body {
+  background-color: #E9ECF1;
+  min-height: 93vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.trainings-content {
+  width: 1200px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.train-cards {
+  background-color: #F3F3F3;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 400px;
+  width: 31%;
+  border-radius: 3px;
+  box-shadow: #d2d2d2 0px 0px 15px;
+}
+.card-name {
+  margin-top: 10px;
+  margin-left: 25px;
+  font-weight: 700;
+  font-size: large;
+  letter-spacing: 1px;
+}
+.card-description {
+  margin-left: 25px;
+  margin-left: 25px;
+  text-align: center;
+  align-self: center;
+  font-family: 'Sriracha', cursive;
+}
+.trains-image {
+  margin-top: 20px;
+  align-self: center;
+  width: 250px;
+  height: 250px;
+}
+.trains-image > img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  box-shadow: #d2d2d2 0px 0px 15px;
+}
+.card-link {
+  align-self: center;
+  margin-top: auto;
+  margin-bottom: 10px;
+}
+.card-link > svg {
+  color: #2695F5;
+  margin-left: 1px;
+  transition: all 0.4s
+  
+}
+.card-link > a {
+  color: #2695F5;
+  font-weight: 600;
+  transition: color 0.4s;
+} 
+
+.card-link > a:hover {
+  text-decoration: none;
+  color: #084980;
+}
+
+.card-link > a:hover ~ .link-arrow{
+  color: #084980;
+  margin-left: 7px;
+  }
+
+.trainings-title {
+  margin-top: 20px;
+  font-family: 'Libre Baskerville', serif;
+}
+

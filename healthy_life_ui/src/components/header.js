@@ -9,7 +9,7 @@ const Header = (props) => {
             <div className="header-before-auth">
 
             <div>
-                <NavLink to="/">Home</NavLink>
+                <NavLink to="/">Trainings</NavLink>
             </div>
                
             <div>
@@ -27,7 +27,7 @@ const Header = (props) => {
     return (
         <div className="header-before-auth">
             <div>
-                <NavLink to="/">Home</NavLink>
+                <NavLink to="/">Trainings</NavLink>
             </div>
 
             <div>
