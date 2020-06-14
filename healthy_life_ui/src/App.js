@@ -5,7 +5,7 @@ import Header from './components/header';
 import Users from './components/users';
 import Authorization from './components/authorization';
 import Trainings from './components/main';
-import Profile from './components/profile';
+import Profile from './components/profile-page/profile';
 import { BrowserRouter, Route } from 'react-router-dom';
 import Registration from './components/registration';
 

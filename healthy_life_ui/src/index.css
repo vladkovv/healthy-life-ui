@@ -19,54 +19,6 @@ line-height: 77px;
   margin-left: 20px;
 }
 
-.profile-page-body {
-  display: flex;
-  background-color: #DCDCDC;
-  justify-content: center;
-  height: 650px;
-  width: 100%;
-}
-
-.profile-content {
-  background-color: #FFFFFF;
-  margin-top: 25px;
-  height: 80vh;
-  width: 70%;
-}
-
-.profile-header {
-  background-color: #EFEFEF;
-  height: 15%;
-  display: flex;
-  
-}
-.profile-header-name {
-  padding-top: 12px;
-  width: 35%;
-  border-right: 2px solid #FFFFFF;
-}
-
-.profile-private-first {
-  margin-top: 25px;
-  display: flex;
-  justify-content: center;
-  justify-content: space-around;
-}
-.profile-private-second {
-  margin-top: 40px;
-  margin-left: 30px;
-  display: flex;
-  justify-content: center;
-  justify-content: space-around;
-}
-.profile-private-third {
-  margin-top: 40px;
-  margin-left: 30px;
-  display: flex;
-  justify-content: center;
-  justify-content: space-around;
-}
-
 .reg-body {
   background-color: #E9ECF1;
   height: 93vh;
@@ -306,5 +258,41 @@ color: #A2A2A2;
 .train-cards:hover {
   margin-top: -5px;
   box-shadow: #d2d2d2  0px 25px 40px;
+}
+
+.profile-page-body {
+  display: flex;
+  flex-direction: column;
+  background-color: #DCDCDC;
+  align-items: center;
+  height: 93vh;
+  width: 100%;
+}
+
+.profile-header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 70%;
+  height: 60px;
+  margin-top: 20px;
+  border: 2px solid #CDDAEB;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background-color: #FAFBFC;
+}
+.profile-header > div > a {
+  text-decoration: none;
+  color: #B4B8B9;
+  
+}
+
+.profile-header > div > a.active {
+  color: #333333;
+}
+.content-personal {
+  background-color: #FAFBFC;
+  width: 70%;
+  height: 300px;
 }
 
