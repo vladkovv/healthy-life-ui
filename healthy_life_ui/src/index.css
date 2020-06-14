@@ -265,6 +265,7 @@ color: #A2A2A2;
   border-radius: 3px;
   margin-bottom: 40px;
   box-shadow: #d2d2d2 0px 0px 10px;
+  transition: all 0.3s;
 }
 .card-name {
   align-self: center;
@@ -276,7 +277,8 @@ color: #A2A2A2;
 .card-description {
   margin-left: 25px;
   margin-right: 25px;
-  margin-top: 15px;
+  margin-top: auto;
+  margin-bottom: auto;
   text-align: center;
   align-self: center; 
 }
@@ -292,37 +294,17 @@ color: #A2A2A2;
   border-radius: 8%;
   box-shadow: #d2d2d2 0px 0px 5px;
 }
-.card-link {
-  align-self: center;
-  margin-top: auto;
-  margin-bottom: 10px;
-}
-.card-link > svg {
-  color: #2695F5;
-  margin-left: 1px;
-  transition: all 0.4s
-  
-}
-.card-link > a {
-  color: #2695F5;
-  font-weight: 600;
-  transition: color 0.4s;
-} 
 
-.card-link > a:hover {
-  text-decoration: none;
-  color: #084980;
-}
-
-.card-link > a:hover ~ .link-arrow{
-  color: #084980;
-  margin-left: 7px;
-  }
 
 .trainings-title {
   margin-top: 20px;
   font-family: 'Montserrat', sans-serif;
   font-size: 35px;
   font-weight: normal;
+}
+
+.train-cards:hover {
+  margin-top: -5px;
+  box-shadow: #d2d2d2  0px 25px 40px;
 }
 

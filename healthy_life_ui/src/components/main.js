@@ -1,6 +1,4 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom'
-import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 
 class Trainings extends React.Component {
     state = {
@@ -35,10 +33,6 @@ class Trainings extends React.Component {
                               <img src={item.imgSource} alt="" />
                           </div>
                           <div className="card-description">{item.description}</div>
-                          <div className="card-link" >
-                          <NavLink className="link-more" to="">Learn More</NavLink>
-                          <ArrowForwardIcon className="link-arrow" />
-                          </div>
                       </div>  
                         )}
                 </div>
