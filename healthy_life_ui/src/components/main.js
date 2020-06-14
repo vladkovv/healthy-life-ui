@@ -10,7 +10,7 @@ class Trainings extends React.Component {
         const data =  await response.json();
 
         data.map(item => {
-            const obj = {name: item.name, description: item.description, imgSource: item.imageSource}
+            const obj = {name: item.name, description: item.description, imgSource: item.imageSource, id: item.id}
             this.setState({
              trainings: [...this.state.trainings, obj],
             })
@@ -27,7 +27,7 @@ class Trainings extends React.Component {
                 <h1 className="trainings-title">Choose whatever you want</h1>
                 <div className="trainings-content">
                     {this.state.trainings.map(item => 
-                      <div className="train-cards">
+                      <div className="train-cards" key={item.id}>
                           <div className="card-name">{item.name}</div>
                           <div className="trains-image">
                               <img src={item.imgSource} alt="" />

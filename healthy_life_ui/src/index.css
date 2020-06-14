@@ -367,3 +367,37 @@ color: #A2A2A2;
   outline: none;
   border: 2px solid #CDDAEB;
 }
+
+.change-info-button {
+  height: 32px;
+  margin-top: 20px;
+  border: none;
+  background-color: #7289DA;
+  border-radius: 5px;
+  color: #ffffff;
+}
+
+.change-info-button:focus {
+  outline: none;
+}
+
+.change-info-button:hover {
+  background-color: #7279DA;
+}
+
+.save-info-button {
+  height: 32px;
+  margin-top: 20px;
+  border: none;
+  background-color: #19cf4f;
+  border-radius: 5px;
+  color: #ffffff;
+}
+
+.save-info-button:focus {
+  outline: none;
+}
+
+.save-info-button:hover {
+  background-color: #04bf3b;
+}
