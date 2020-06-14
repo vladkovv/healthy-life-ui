@@ -37,7 +37,7 @@ class Profile extends React.Component {
                  <NavLink exact to="/profile/security">Security</NavLink>  
                 </div>
             </div>
-            <Personal getUser={this.gettingUserData} data={this.state} />
+            <Personal getUser={this.gettingUserData} data={this.state} url={this.props.url} id={this.props.id}/>
         </div>
     )
     }
