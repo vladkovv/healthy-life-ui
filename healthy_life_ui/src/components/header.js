@@ -11,6 +11,7 @@ const Header = (props) => {
             <div>
                 <NavLink to="/">Trainings</NavLink>
             </div>
+
                
             <div>
                 <NavLink to="/reg">Sign UP</NavLink>
@@ -28,6 +29,10 @@ const Header = (props) => {
         <div className="header-before-auth">
             <div>
                 <NavLink to="/">Trainings</NavLink>
+            </div>
+
+            <div>
+                <NavLink to='/training'>Train</NavLink>
             </div>
 
             <div>

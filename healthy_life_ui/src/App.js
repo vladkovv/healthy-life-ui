@@ -8,6 +8,7 @@ import Trainings from './components/main';
 import Profile from './components/profile-page/profile';
 import { BrowserRouter, Route } from 'react-router-dom';
 import Registration from './components/registration';
+import Training from './components/training';
 
 const URL =  'https://healthy-life-kotlin.herokuapp.com/api/v1';
 
@@ -40,6 +41,7 @@ class App extends React.Component {
     <Route path='/reg' render={(props) => <Registration url={URL} status={this.state.token}  {...props}/>}/>
     <Route path='/profile' render={(props) => <Profile url={URL} status={this.state.token} id={this.state.currId} {...props}/>} />
     <Route path='/users' render={(props) => <Users url={URL} status={this.state.token}  {...props}/>}/>
+    <Route path='/training' render={(props) => <Training url={URL} status={this.state.token}  {...props}/>}/>
     
     </div> 
     </div>

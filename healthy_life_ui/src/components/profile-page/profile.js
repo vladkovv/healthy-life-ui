@@ -1,19 +1,22 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { BrowserRouter, Route,  Redirect } from 'react-router-dom';
+
 
 import Personal from './personal'
 
 class Profile extends React.Component {
-    state = {username: '', firstName: '', lastName: '', height: '', weight: '', gender: '', birthDate: '', email: '', imgSource: ''}
+    state = {}
 
-    gettingUserData = async () => {
-        const response = await fetch(`${this.props.url}/users/${this.props.id}`)
-        const data = await response.json();
-        this.setState({username: data.username, firstName: data.firstName, lastName: data.lastName, height: data.height, weight: data.weight, gender: data.gender, birthDate: data.birthDate, email: data.email, imgSource: data.imageSource});
-    }
+    
 
     componentDidMount() {
-        this.gettingUserData()
+        document.querySelector('.active-link').classList.add('active');
+        document.querySelectorAll('.not-active-link').forEach(item => item.addEventListener('click', () => {
+            if(document.querySelector('.active-link').classList.contains('active')) {
+                document.querySelector('.active-link').className = 'active-link';
+            }
+        }));
     }
 
 
@@ -22,22 +25,25 @@ class Profile extends React.Component {
         <div className="profile-page-body">
             <div className="profile-header">
                 <div>
-                 <NavLink exact to="/profile/personal">Personal info</NavLink>   
+                 <NavLink exact to="/profile/personal" className='active-link'>Personal info</NavLink>   
                 </div>
                 <div>
-                 <NavLink exact to="/profile/trainings">Trainings</NavLink>  
+                 <NavLink exact to="/profile/trainings" className='not-active-link'>Trainings</NavLink>  
                 </div>
                 <div>
-                 <NavLink exact to="/profile/records">Records</NavLink>  
+                 <NavLink exact to="/profile/records" className='not-active-link'>Records</NavLink>  
                 </div>
                 <div>
-                 <NavLink exact to="/profile/achieves">Achievments</NavLink>  
+                 <NavLink exact to="/profile/achieves" className='not-active-link'>Achievments</NavLink>  
                 </div>
                 <div>
-                 <NavLink exact to="/profile/security">Security</NavLink>  
+                 <NavLink exact to="/profile/security" className='not-active-link'>Security</NavLink>  
                 </div>
             </div>
-            <Personal getUser={this.gettingUserData} data={this.state} url={this.props.url} id={this.props.id}/>
+            <BrowserRouter>
+            <Redirect to={'/profile/personal'}/>
+            <Route exact path='/profile/personal' render={(props) => <Personal url={this.props.url}  id={this.props.id}  {...props}/>}/>
+            </BrowserRouter>
         </div>
     )
     }

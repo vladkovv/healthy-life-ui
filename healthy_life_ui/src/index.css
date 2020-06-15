@@ -401,3 +401,11 @@ color: #A2A2A2;
 .save-info-button:hover {
   background-color: #04bf3b;
 }
+
+.training-body {
+  display: flex;
+  background-color: #DCDCDC;
+  align-items: center;
+  height: 93vh;
+  width: 100%;
+}
