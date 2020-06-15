@@ -341,6 +341,7 @@ color: #A2A2A2;
   width: 540px;
   flex-wrap: wrap;
   justify-content: space-between;
+  margin-bottom: 50px;
 }
 
 .personal-data > div {
@@ -405,7 +406,41 @@ color: #A2A2A2;
 .training-body {
   display: flex;
   background-color: #DCDCDC;
-  align-items: center;
+  justify-content: center;
   height: 93vh;
   width: 100%;
+}
+
+.training-content {
+  background-color: #FAFBFC;
+  margin-top: 20px;
+  width: 70%;
+  height: 360px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border: 2px solid #CDDAEB;
+}
+
+.training-content-head {
+  display: flex;
+}
+.training-content-head > div{
+  margin-left: 22px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  text-align: center;
+}
+
+
+
+.training-content-head > img {
+  margin-top: 20px;
+  margin-left: 20px;
+  width: 45%;
+  max-height: 280px;
+  height: auto;
+  border-radius: 15px;
+
 }

@@ -23,7 +23,7 @@ class Personal extends React.Component {
         return await fetch(`${this.props.url}/users`, {
             method: 'PUT',
             headers: {"Content-Type":"application/json"},
-            body: JSON.stringify({id: this.props.id, firstName: this.state.firstName, lastName: this.state.lastName, birthDate: this.state.birthDate, email: this.state.email, gender: this.state.gender, weight: this.state.weight, height: this.state.height})
+            body: JSON.stringify({id: this.props.id, username: this.state.username, firstName: this.state.firstName, lastName: this.state.lastName, birthDate: this.state.birthDate, email: this.state.email, gender: this.state.gender, weight: this.state.weight, height: this.state.height})
         })
     }
 

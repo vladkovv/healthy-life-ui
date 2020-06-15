@@ -57,12 +57,6 @@ class Users extends React.Component{
 
     }
 
-    // componentDidUpdate() {
-    //   this.setState({
-    //     users: []
-    //   })
-    //   this.gettingData()
-    // }
 render() {
   
   if(!this.props.status) {
