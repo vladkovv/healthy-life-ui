@@ -44,51 +44,68 @@ class Personal extends React.Component {
     }
 
     handleEmailChanges = (e) => {
-            console.log(this.state)
+        if(e.target.value) {
         this.setState({
             email: e.target.value
-        })
+        })} else {
+            e.target.value = this.state.email
+        }
     }
 
     handleBDChanges = (e) => {
-        console.log(this.state)
+        if(e.target.value) {
         this.setState({
             birthDate: e.target.value
-        })
+        })} else {
+            e.target.value = this.state.birthDate
+        }
     }
 
     handleFirstNameChanges = (e) => {
+        if(e.target.value) {
         this.setState({
             firstName: e.target.value
-        })
-        console.log(this.state)
+        })} else {
+            e.target.value = this.state.firstName
+        }
+        
     }
     
 
     handleLastNameChanges = (e) => {
-        console.log(this.state)
+        if(e.target.value) {
         this.setState({
             lastName: e.target.value
-        })
+        })} else {
+            e.target.value = this.state.lastName
+        }
     }
 
     handleHeightNameChanges = (e) => {
-        console.log(this.state)
+        if(e.target.value) {
         this.setState({
             height: e.target.value
-        })
+        })} else {
+            e.target.value = this.state.height
+        }
     }
 
     handleWeightNameChanges = (e) => {
+        if(e.target.value) {
         this.setState({
-            wight: e.target.value
-        })
+            weight: e.target.value
+        })} else {
+            e.target.value = this.state.weight
+        }
     }
 
     handleGenderChanges = (e) => {
+        if(e.target.value) {
         this.setState({
             gender: e.target.value
-        })
+        })} else {
+            e.target.value = this.state.gender
+        }
     }
 
     componentDidMount() {
@@ -113,7 +130,7 @@ class Personal extends React.Component {
                 </div>
                 <div>
                     <h2>first name</h2>
-                    <input type="text" readOnly defaultValue={this.state.firstName}  onChange={this.handleFirstNameChanges} />
+                    <input type="text" readOnly defaultValue={this.state.firstName}  onBlur={this.handleFirstNameChanges} />
                 </div>
                 <div>
                     <h2>last name</h2>

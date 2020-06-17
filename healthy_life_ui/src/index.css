@@ -415,7 +415,7 @@ color: #A2A2A2;
   background-color: #FAFBFC;
   margin-top: 20px;
   width: 70%;
-  height: 360px;
+  height: 320px;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   border: 2px solid #CDDAEB;
@@ -431,6 +431,15 @@ color: #A2A2A2;
   flex-direction: column;
   width: 50%;
   text-align: center;
+  height: 290px;
+}
+
+.training-content-head > div > h1 {
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.training-content-head > div > h2 {
+  font-size: x-large;
 }
 
 
@@ -439,8 +448,30 @@ color: #A2A2A2;
   margin-top: 20px;
   margin-left: 20px;
   width: 45%;
-  max-height: 280px;
+  max-height: 270px;
   height: auto;
   border-radius: 15px;
+  box-shadow: #d2d2d2 0px 0px 10px;
 
+}
+.follow-button {
+  align-self: center;
+  width: 150px;
+  height: 40px;
+  margin-top: auto;
+  margin-bottom: auto;
+  background-color: #3C95E7;
+  color: #F8F8F8;
+  border: none;
+  border-radius: 6px;
+  transition: all 0.3s;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.follow-button:focus {
+  outline: none;
+}
+
+.follow-button:hover {
+  background-color: #3c72e7;
 }

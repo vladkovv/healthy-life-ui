@@ -23,6 +23,7 @@ class Training extends React.Component {
                     <div>
                         <h1>{this.state.name}</h1>
                         <h2>{this.state.description}</h2>
+                        <button className="follow-button">Follow</button>
                     </div>
                 </div>
             </div>
