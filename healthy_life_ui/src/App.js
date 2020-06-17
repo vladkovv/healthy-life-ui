@@ -8,7 +8,7 @@ import Trainings from './components/main';
 import Profile from './components/profile-page/profile';
 import { BrowserRouter, Route } from 'react-router-dom';
 import Registration from './components/registration';
-import Training from './components/training';
+import Training from './components/training/training';
 
 const URL =  'https://healthy-life-kotlin.herokuapp.com/api/v1';
 

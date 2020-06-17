@@ -1,13 +1,14 @@
 import React from 'react';
+import TrainingBody from './training-body'
 
 class Training extends React.Component {
 
-    state = {imageSource: '', name: '', description: ''}
+    state = {imageSource: '', name: '', description: '', daysOfTrainings: []}
 
     gettingTrainInfo = async () => {
         let response =  await fetch(`${this.props.url}/trainings/3`)
         let data =  await response.json()
-        this.setState({imageSource: data.imageSource, name: data.name, description: data.description})
+        this.setState({imageSource: data.imageSource, name: data.name, description: data.description, daysOfTrainings: data.daysOfTrainings})
     }
 
     componentDidMount() {
@@ -26,6 +27,7 @@ class Training extends React.Component {
                         <button className="follow-button">Follow</button>
                     </div>
                 </div>
+                <TrainingBody url={this.props.url} data={this.state.daysOfTrainings}/>
             </div>
         </div>
         )

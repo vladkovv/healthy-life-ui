@@ -415,7 +415,6 @@ color: #A2A2A2;
   background-color: #FAFBFC;
   margin-top: 20px;
   width: 70%;
-  height: 320px;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   border: 2px solid #CDDAEB;
@@ -474,4 +473,40 @@ color: #A2A2A2;
 
 .follow-button:hover {
   background-color: #3c72e7;
+}
+
+.training-content-body {
+  background-color: #FAFBFC;
+  width: 100%;
+  height: 320px;
+}
+
+.training-content-body-header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  margin-top: 20px;
+  border-top: 2px solid #CDDAEB;
+  border-bottom: 2px solid #CDDAEB;
+  background-color: #FAFBFC;
+}
+
+.training-content-body-header > div > a {
+  text-decoration: none;
+  color: #B4B8B9;
+  padding-bottom: 10px;
+  font-weight: 600;
+  
+}
+
+.training-content-body-header > div > a:hover {
+  border-bottom: 2px solid #D1D5DA;
+}
+
+.training-content-body-header > div > a.active {
+  color: #333333;
+  padding-bottom: 18px;
+  border-bottom: 2px solid blue;
 }
