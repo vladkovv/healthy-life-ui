@@ -25,19 +25,19 @@ class Profile extends React.Component {
         <div className="profile-page-body">
             <div className="profile-header">
                 <div>
-                 <NavLink exact to="/profile/personal" className='active-link'>Personal info</NavLink>   
+                 <NavLink  to="/profile/personal" className='active-link'>Personal info</NavLink>   
                 </div>
                 <div>
-                 <NavLink exact to="/profile/trainings" className='not-active-link'>Trainings</NavLink>  
+                 <NavLink  to="/profile/trainings" className='not-active-link'>Trainings</NavLink>  
                 </div>
                 <div>
-                 <NavLink exact to="/profile/records" className='not-active-link'>Records</NavLink>  
+                 <NavLink  to="/profile/records" className='not-active-link'>Records</NavLink>  
                 </div>
                 <div>
-                 <NavLink exact to="/profile/achieves" className='not-active-link'>Achievments</NavLink>  
+                 <NavLink  to="/profile/achieves" className='not-active-link'>Achievments</NavLink>  
                 </div>
                 <div>
-                 <NavLink exact to="/profile/security" className='not-active-link'>Security</NavLink>  
+                 <NavLink  to="/profile/security" className='not-active-link'>Security</NavLink>  
                 </div>
             </div>
             <BrowserRouter>

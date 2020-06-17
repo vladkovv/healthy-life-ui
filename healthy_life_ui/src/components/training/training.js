@@ -1,5 +1,6 @@
 import React from 'react';
-import TrainingBody from './training-body'
+import TrainingBody from './training-body';
+import { Redirect } from 'react-router-dom';
 
 class Training extends React.Component {
 
@@ -17,6 +18,7 @@ class Training extends React.Component {
 
     render() {
         return(
+                        
         <div className='training-body'>
             <div className="training-content">
                 <div className='training-content-head'>
@@ -29,8 +31,9 @@ class Training extends React.Component {
                 </div>
                 <TrainingBody url={this.props.url} data={this.state.daysOfTrainings}/>
             </div>
+            <Redirect to={'/training/day/1'}/>
         </div>
-        )
+    )
     }
 }
 
