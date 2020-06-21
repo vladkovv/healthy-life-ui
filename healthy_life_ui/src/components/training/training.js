@@ -4,21 +4,21 @@ import { Redirect } from 'react-router-dom';
 
 class Training extends React.Component {
 
-    state = {imageSource: '', name: '', description: '', daysOfTrainings: []}
+    state = {imageSource: '', name: '', description: '', days: []}
 
     gettingTrainInfo = async () => {
-        let response =  await fetch(`${this.props.url}/trainings/3`)
-        let data =  await response.json()
-        this.setState({imageSource: data.imageSource, name: data.name, description: data.description, daysOfTrainings: data.daysOfTrainings})
+        let id = localStorage.getItem('trainId')
+        let response =  await fetch(`${this.props.url}/trainings/${id}`)
+        let data = await response.json()
+        this.setState({imageSource: data.imageSource, name: data.name, description: data.description, days: data.daysOfTrainings})
     }
 
     componentDidMount() {
         this.gettingTrainInfo()
     }
 
-    render() {
-        return(
-                        
+    render() { 
+        return(                       
         <div className='training-body'>
             <div className="training-content">
                 <div className='training-content-head'>
@@ -29,7 +29,7 @@ class Training extends React.Component {
                         <button className="follow-button">Follow</button>
                     </div>
                 </div>
-                <TrainingBody url={this.props.url} data={this.state.daysOfTrainings}/>
+                <TrainingBody url={this.props.url} days={this.state.days}/>
             </div>
             <Redirect to={'/training/day/1'}/>
         </div>

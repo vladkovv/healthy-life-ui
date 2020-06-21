@@ -1,13 +1,14 @@
 import React from 'react';
+import { Fade } from '@material-ui/core';
 
 class ProfileTrainings extends React.Component {
 
     state = {trainings: []}
 
     gettingUserTrainings = async () => {
-        let response = await fetch(`${this.props.url}/users/${this.props.id}`)
+        let response = await fetch(`${this.props.url}/users/${this.props.id}/trainings`)
         let data = await response.json()
-        data.trainings.map(item => {
+        data.map(item => {
             const obj = {name: item.name, description: item.description, imgSource: item.imageSource, id: item.id}
             this.setState({
                 trainings: [...this.state.trainings, obj]   
@@ -21,6 +22,7 @@ class ProfileTrainings extends React.Component {
 
     render() {
         return(
+            <Fade in>
             <div className="content-profile-tranings">
                 {this.state.trainings.map(item => 
                     <div key={item.id} className="profile-training">
@@ -35,6 +37,7 @@ class ProfileTrainings extends React.Component {
                     </div>
                 )}
             </div> 
+            </Fade>
         )
     }
 }

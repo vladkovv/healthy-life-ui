@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { Fade } from '@material-ui/core';
 
 class Achievements extends React.Component {
 
@@ -6,9 +7,9 @@ class Achievements extends React.Component {
 
 
     gettingUserAchievments = async () => {
-        let response = await fetch(`${this.props.url}/users/${this.props.id}`)
+        let response = await fetch(`${this.props.url}/users/${this.props.id}/achievements`)
         let data = await response.json() 
-        data.achievements.map(item => {
+        data.map(item => {
             const obj = {name: item.name, description: item.description, imgSource: item.imageSource, id: item.id}
             this.setState({
                 achieves: [...this.state.achieves, obj]   
@@ -22,6 +23,7 @@ class Achievements extends React.Component {
 
     render() {
         return(
+            <Fade in>
             <div className="content-achievements">
                 {
                     this.state.achieves.map(item => 
@@ -37,6 +39,7 @@ class Achievements extends React.Component {
                     
                 }
             </div>
+            </Fade>
         )
     }
 }

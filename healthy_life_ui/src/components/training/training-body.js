@@ -2,34 +2,26 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 class TrainingBody extends React.Component {
-    state = {id: '', exercises: []}
+    state = {dayId: '1', exercises: []}
 
     
-    handleExercisesDay = (e) => {
-        this.setState({id: Number(e.target.id)}, () => {
-        this.props.data.map(item => {
-            if(item.day === this.state.id) {
-                this.setState({exercises: item.exercises})
-                return
-            }
+    handleExercisesDay = async (e) => {
+        this.setState({dayId: Number(e.target.id)}, () => {
+            this.getExercisesData()
         })
-    })}
-
-    initialExerciseDay = () => {
-       let elem = document.querySelector('a.days')
-       console.log(elem)
-        
+            
     }
-
-    componentDidMount() {
-        this.initialExerciseDay()
+    getExercisesData = async() => {
+        let trainId = localStorage.getItem('trainId')
+        let response = await fetch(`${this.props.url}/trainings/${trainId}/days/${this.state.dayId}/exercises`)
+        let data = await response.json()
+        this.setState({exercises: data})
     }
-
     render() {
         return (
         <div className="training-content-body">
             <div className="training-content-body-header">
-              {this.props.data.map(item => 
+              {this.props.days.map(item =>
                   <div key={item.id}>
                       <NavLink to={`/training/day/${item.day}`} id={item.day} className="days" onClick={this.handleExercisesDay}>Day {item.day}</NavLink>
                   </div>
@@ -38,9 +30,9 @@ class TrainingBody extends React.Component {
                 <div className='exercises'>
                     <h2>Exercises</h2>
               {this.state.exercises.map(item =>
-                <div className="exercise">
+                <div key={item.id} className="exercise">
                     <div className="exercise-div-img">
-                        <img className='exercise-img' src={item.imageSource}/>
+                        <img className='exercise-img' src={item.imageSource} alt=''/>
                     </div>
                     <div className="exercise-info">
                         <h2>{item.name}</h2>

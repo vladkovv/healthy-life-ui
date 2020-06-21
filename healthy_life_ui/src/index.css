@@ -208,6 +208,10 @@ color: #A2A2A2;
   justify-content: space-between;
 }
 
+.trainings-container {
+  text-align: center; 
+}
+
 .train-cards {
   background-color: #F3F3F3;
   display: flex;
@@ -219,6 +223,7 @@ color: #A2A2A2;
   margin-bottom: 40px;
   box-shadow: #d2d2d2 0px 0px 10px;
   transition: all 0.3s;
+  cursor: pointer;
 }
 .card-name {
   align-self: center;

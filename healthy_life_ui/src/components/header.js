@@ -31,11 +31,8 @@ const Header = (props) => {
                 <NavLink to="/">Trainings</NavLink>
             </div>
 
-            {/* <div>
-                <NavLink to='/training'>Train</NavLink>
-            </div> */}
             <div>
-                <NavLink to='/'>Log out</NavLink>
+                <NavLink to='/' onClick={props.logOut}>Log out</NavLink>
             </div>
             <div>
                 <NavLink to="/profile">Profile</NavLink>

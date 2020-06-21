@@ -1,13 +1,14 @@
 import React from 'react';
+import { Fade } from '@material-ui/core';
 
 class Records extends React.Component {
 
     state = {records: []}
 
     gettingUserRecords = async () => {
-        let response = await fetch(`${this.props.url}/users/${this.props.id}`)
+        let response = await fetch(`${this.props.url}/users/${this.props.id}/records`)
         let data = await response.json()
-        data.records.map(item => {
+        data.map(item => {
             const obj = {runDate: item.runDate, startTime: item.startTime, endTime: item.endTime, distance: item.distance, id: item.id}
             this.setState({
                 records: [...this.state.records, obj]   
@@ -21,6 +22,7 @@ class Records extends React.Component {
 
     render() {
         return(
+            <Fade in>
             <div className='content-records'>
                 {this.state.records.map(item => 
                     <div key={item.id} className='profile-record'>
@@ -43,6 +45,7 @@ class Records extends React.Component {
                     </div>
                 )}
             </div>
+            </Fade>
         )
     }
 

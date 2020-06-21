@@ -1,4 +1,5 @@
 import React from 'react';
+import { Fade } from '@material-ui/core';
 
 class Security extends React.Component {
 
@@ -6,6 +7,7 @@ class Security extends React.Component {
 
     render() {
         return (
+            <Fade in>
             <div className="content-security">
             <h2>Change Password</h2> 
             <div className="security-fields">
@@ -22,6 +24,7 @@ class Security extends React.Component {
                 </div>
             </div>
             </div>
+            </Fade>
         )
     }
 }

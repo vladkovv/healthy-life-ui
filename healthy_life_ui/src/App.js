@@ -6,7 +6,7 @@ import Users from './components/users';
 import Authorization from './components/authorization';
 import Trainings from './components/main';
 import Profile from './components/profile-page/profile';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Redirect } from 'react-router-dom';
 import Registration from './components/registration';
 import Training from './components/training/training';
 
@@ -16,12 +16,19 @@ class App extends React.Component {
 
   state = {currId: '', token: ''}
 
-  handleAuth = async (id, token) => {
+  handleAuth = (id, token) => {
     this.setState({currId: id})
     this.setState({token: token})
     localStorage.setItem("token", token)
     localStorage.setItem("id", id)
   }
+
+  handleLogOut = () => {
+    this.setState({currId: ''})
+    this.setState({token: ''})
+    localStorage.clear()
+  }
+
 
   componentDidMount() {
     if(localStorage.token) {
@@ -34,14 +41,14 @@ class App extends React.Component {
   return (
     <BrowserRouter>
     <div>
-    <Header  status={this.state.token} />
+    <Header  status={this.state.token} logOut={this.handleLogOut} />
     <div className="app-content">
-    <Route exact path='/' render={(props) => <Trainings url={URL} status={this.state.token}  {...props}/>}/>
+    <Route exact path='/' render={(props) => <Trainings url={URL} status={this.state.token}   {...props}/>}/>
     <Route path='/auth' render={(props) => <Authorization url={URL} onAuth={this.handleAuth} status={this.state.token}  {...props}/>}/>
     <Route path='/reg' render={(props) => <Registration url={URL} status={this.state.token}  {...props}/>}/>
     <Route path='/profile' render={(props) => <Profile url={URL} status={this.state.token} id={this.state.currId} {...props}/>} />
     <Route path='/users' render={(props) => <Users url={URL} status={this.state.token}  {...props}/>}/>
-    <Route path='/training' render={(props) => <Training url={URL} status={this.state.token}  {...props}/>}/>
+    <Route path='/training' render={(props) => <Training url={URL} status={this.state.token}   {...props}/>}/>
     
     </div> 
     </div>

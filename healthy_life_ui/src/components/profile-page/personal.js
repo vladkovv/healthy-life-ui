@@ -1,4 +1,5 @@
 import React from 'react';
+import { Fade } from '@material-ui/core';
 
 class Personal extends React.Component {
 
@@ -114,6 +115,7 @@ class Personal extends React.Component {
 
     render() {
         return(
+            <Fade in>
             <div className="content-personal">
             <div className="avatar">
                 <img alt="" src={this.state.imgSource} />
@@ -153,6 +155,7 @@ class Personal extends React.Component {
                 </div>
             </div>
             </div>
+            </Fade>
         )
     }
 }

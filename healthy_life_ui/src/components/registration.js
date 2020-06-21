@@ -1,5 +1,6 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
+import { Fade } from '@material-ui/core';
 
 class Registration extends React.Component {
 
@@ -19,7 +20,7 @@ class Registration extends React.Component {
 
 
     onRegistration = async () => {
-        let response = await fetch(`${this.props.url}/users`, {
+        let response = await fetch(`${this.props.url}/users/registration`, {
             method: "POST",
             headers: {"Content-Type":"application/json"},
             body: JSON.stringify({username: this.state.username, password: this.state.password,  email: this.state.email})
@@ -35,7 +36,8 @@ class Registration extends React.Component {
         if(this.state.success) return(<Redirect to={'/auth'} />)
         
         return(
-            <div className="reg-body">
+    <div className="reg-body">
+        <Fade in>
         <div className="reg-form">
           <div className="reg-content">
           <h1>Sign Up</h1>
@@ -50,7 +52,7 @@ class Registration extends React.Component {
             <button className="auth-button"  onClick={this.onRegistration}>SIGN UP</button>
           </div>
         </div>
-
+        </Fade>
       </div>
         )
     }

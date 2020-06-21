@@ -1,6 +1,8 @@
 import React from 'react';
 import {Redirect} from 'react-router-dom';
 // import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import { Fade } from '@material-ui/core';
+
 
 class Authorization extends React.Component {
     state = {login: "", password: "", success: false}
@@ -36,6 +38,7 @@ class Authorization extends React.Component {
       if(this.props.status) return <Redirect to={'/'} />
     return (
       <div className="auth-body">
+        <Fade in>
         <div className="auth-form">
           <div className="auth-content">
           <h1>Login</h1>
@@ -49,8 +52,9 @@ class Authorization extends React.Component {
             {/* <div className='auth-error'>Account with this username already exist</div> */}
           </div>
         </div>
-
+        </Fade>
       </div>
+      
     )
 }}
 

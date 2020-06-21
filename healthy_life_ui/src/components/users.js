@@ -3,6 +3,7 @@ import { Redirect } from 'react-router-dom';
 import CreateIcon from '@material-ui/icons/Create';
 import HighlightOffIcon from '@material-ui/icons/HighlightOff';
 import Pagination, { usePagination } from '@material-ui/lab/Pagination';
+import { Fade } from '@material-ui/core';
 
 class Users extends React.Component{
     
@@ -32,7 +33,6 @@ class Users extends React.Component{
 
       deleteUser = async (e) => {
         const removeUserId = Number(e.target.id);
-        console.log(e.target.id)
         const newState = this.state.users.filter((user) => user.id !== removeUserId);
         this.setState({
           users: newState
@@ -65,6 +65,7 @@ render() {
 
 return(
 <div className="users-body">
+  <Fade in>
 <div>
     {
         <table className="users-table">
@@ -97,6 +98,7 @@ return(
         </table>
     }
 </div>
+</Fade>
     <Pagination count={this.state.countPages} onChange={(event, page) => this.handlePagehanged(page.toString())} className="pagination"/>
 </div>
 );
