@@ -4,6 +4,10 @@ import { BrowserRouter, Route,  Redirect } from 'react-router-dom';
 
 
 import Personal from './personal'
+import Security from './security';
+import ProfileTrainings from './profileTrainings';
+import Achievements from './achievements';
+import Records from './records';
 
 class Profile extends React.Component {
     state = {}
@@ -22,7 +26,10 @@ class Profile extends React.Component {
 
     render() {
     return(
+        <BrowserRouter>
+        <Redirect to={'/profile/personal'}/>
         <div className="profile-page-body">
+            
             <div className="profile-header">
                 <div>
                  <NavLink  to="/profile/personal" className='active-link'>Personal info</NavLink>   
@@ -40,11 +47,13 @@ class Profile extends React.Component {
                  <NavLink  to="/profile/security" className='not-active-link'>Security</NavLink>  
                 </div>
             </div>
-            <BrowserRouter>
-            <Redirect to={'/profile/personal'}/>
-            <Route exact path='/profile/personal' render={(props) => <Personal url={this.props.url}  id={this.props.id}  {...props}/>}/>
-            </BrowserRouter>
+            <Route  path='/profile/personal' render={(props) => <Personal url={this.props.url}  id={this.props.id}  {...props}/>}/>
+            <Route  path='/profile/security' render={(props) => <Security url={this.props.url}  id={this.props.id}  {...props}/>}/>
+            <Route  path='/profile/trainings' render={(props) => <ProfileTrainings url={this.props.url}  id={this.props.id}  {...props}/>}/>
+            <Route  path='/profile/achieves' render={(props) => <Achievements url={this.props.url}  id={this.props.id}  {...props}/>}/>
+            <Route  path='/profile/records' render={(props) => <Records url={this.props.url}  id={this.props.id}  {...props}/>}/>
         </div>
+        </BrowserRouter>
     )
     }
 

@@ -51,7 +51,7 @@ line-height: 77px;
   }
   .reg-fields > h2 {
     font-size: small;
-    font-weight: 500;
+    font-weight: 600;
     margin-top: 25px;
   }
   
@@ -98,7 +98,7 @@ box-shadow: 0 0 3px rgba(0,0,0,0.5);
 }
 .auth-fields > h2 {
   font-size: small;
-  font-weight: 500;
+  font-weight: 600;
   margin-top: 25px;
 }
 
@@ -122,6 +122,7 @@ box-shadow: 0 0 3px rgba(0,0,0,0.5);
   margin-top: 45px;
   width: 250px;
   height: 32px;
+  letter-spacing: 1px;
 }
 
 .auth-button:focus{
@@ -265,7 +266,7 @@ color: #A2A2A2;
   flex-direction: column;
   background-color: #DCDCDC;
   align-items: center;
-  height: 93vh;
+  min-height: 93vh;
   width: 100%;
 }
 
@@ -407,7 +408,7 @@ color: #A2A2A2;
   display: flex;
   background-color: #DCDCDC;
   justify-content: center;
-  height: 93vh;
+  min-height: 93vh;
   width: 100%;
 }
 
@@ -440,8 +441,6 @@ color: #A2A2A2;
 .training-content-head > div > h2 {
   font-size: x-large;
 }
-
-
 
 .training-content-head > img {
   margin-top: 20px;
@@ -478,7 +477,6 @@ color: #A2A2A2;
 .training-content-body {
   background-color: #FAFBFC;
   width: 100%;
-  height: 320px;
 }
 
 .training-content-body-header {
@@ -509,4 +507,320 @@ color: #A2A2A2;
   color: #333333;
   padding-bottom: 18px;
   border-bottom: 2px solid blue;
+}
+
+.exercises {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
+}
+
+.exercises > h2 {
+  margin-top: 20px;
+  font-weight: 600;
+  align-self: center;
+  font-size: xx-large;
+}
+
+.exercise {
+  display: flex;
+  align-self: center;
+  flex-direction: row;
+  border: 1px solid #CDDAEB;
+  border-radius: 10px;
+  margin-top: 20px;
+  width: 95%; 
+}
+
+.exercise-div-img {
+  margin-top: auto;
+  margin-left: 10px;
+  display: flex;
+  width: 280px;
+  height: 200px;
+}
+.exercise-img {
+  border-radius: 10px;
+  max-height: 100%;
+  max-width: 100%;
+  height: auto;
+  width: auto;
+}
+
+.exercise-info {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 500px;
+}
+
+.counts {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.counts > div {
+  font-weight: 600;
+}
+
+.exercise-description {
+  margin-bottom: auto;
+  margin-top: auto;
+  text-align: center;
+}
+
+.exercise-info > h2 {
+  margin-top: 10px;
+}
+
+.content-security {
+  background-color: #FAFBFC;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70%;
+  height: 250px;
+  margin-top: 0px;
+  border: 2px solid #CDDAEB;
+  border-top: none;
+}
+
+.content-security > h2 {
+  margin-top: 10px;
+  align-self: center;
+  font-size: x-large;
+  margin-bottom: 20px;
+}
+
+.security-fields {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: 200px;
+}
+
+.security-fields > div {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  
+}
+.security-fields > div > h2 {
+  font-size: 13px;
+  margin: 0;
+  font-weight: 600;
+  margin-bottom: 3px;
+
+}
+.security-fields > div > input {
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #D9D9D9;
+  height: 32px;
+  width: 200px;
+  margin-bottom: 30px;
+}
+
+.security-fields > div > input:focus {
+  outline: none;
+  border: 2px solid #CDDAEB;
+}
+
+.security-button {
+  margin-top: 19px;
+  height: 32px;
+  border: none;
+  background-color: #19cf4f;
+  border-radius: 5px;
+  color: #ffffff;
+}
+
+.security-button:focus {
+  outline: none;
+}
+
+.security-button:hover {
+background-color: #04bf3b;
+}
+
+.content-profile-tranings {
+  background-color: #FAFBFC;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70%;
+  margin-top: 0px;
+  border: 2px solid #CDDAEB;
+  border-top: none;
+}
+
+.profile-training {
+  display: flex;
+  align-self: center;
+  flex-direction: row;
+  border: 1px solid #CDDAEB;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 95%; 
+}
+
+.profile-training-img {
+  width: 280px;
+  height: 200px;
+  display: flex;
+}
+
+.profile-training-img > img {
+  max-width: 100%;
+  max-height: 100%;
+  height: auto;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.profile-training-info {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  flex-direction: column;
+  align-items: center;
+  width: 500px;
+  justify-content: space-between;
+}
+
+.profile-training-info > h2 {
+  margin-top: 10px;
+}
+
+.profile-training-info > div {
+  text-align: center;
+}
+
+.profile-training-button {
+  align-self: center;
+  width: 150px;
+  height: 40px;
+  background-color: #3C95E7;
+  color: #F8F8F8;
+  border: none;
+  border-radius: 6px;
+  transition: all 0.3s;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+}
+.profile-training-button:focus {
+  outline: none;
+}
+
+.profile-training-button:hover {
+  background-color: #3c72e7;
+}
+
+.content-achievements {
+  background-color: #FAFBFC;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  justify-content: space-around;
+  width: 70%;
+  margin-top: 0px;
+  border: 2px solid #CDDAEB;
+  border-top: none;
+}
+
+.achieve-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #CDDAEB;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 32%; 
+  align-items: center;
+  min-height: 320px;
+  flex-wrap: wrap;
+}
+
+.achieve-card-img {
+  margin-top: 20px;
+  width: 90%;
+  height: 150px;
+}
+
+.achieve-card-img > img {
+  width: 100%;
+  max-height: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.achieve-card-description {
+ text-align: center;
+ margin-top: auto;
+ margin-bottom: auto;
+}
+
+.achieve-card > h2 {
+  margin-top: 10px;
+}
+
+.content-records {
+  background-color: #FAFBFC;
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin-top: 0px;
+  border: 2px solid #CDDAEB;
+  border-top: none;
+  align-items: center;
+  padding-bottom: 20px;
+
+}
+
+.profile-record {
+  display: flex;
+  justify-content: space-around;
+  border: 1px solid #CDDAEB;
+  width: 90%;
+  height: 100px;
+  border-radius: 10px;
+  align-items: center;
+  margin-top: 25px;
+  
+}
+
+.profile-record > div > h2 {
+  font-size: 13px;
+  font-weight: 600;
+  margin: 0;
+  margin-bottom: 3px;
+}
+
+.profile-record > div > input {
+  border-radius: 5px;
+  border: 1px solid #D9D9D9;
+  height: 32px;
+}
+
+.profile-record > div > input:focus {
+  outline: none;
+  border: 2px solid #CDDAEB;
+}
+
+.auth-error {
+  width: 270px;
+  /* padding-top: 5px; */
+  text-align: center;
+  margin-top: 5px;
+  height: 50px;
+  background-color: red;
+  color: #ffffff;
+  border-radius: 10px;
 }

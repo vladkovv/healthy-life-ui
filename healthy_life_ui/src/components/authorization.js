@@ -3,7 +3,7 @@ import {Redirect} from 'react-router-dom';
 // import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 
 class Authorization extends React.Component {
-    state = {login: "", password: ""}
+    state = {login: "", password: "", success: false}
 
     onLoginChange = (event) => {
         this.setState({login: event.target.value})
@@ -24,6 +24,7 @@ class Authorization extends React.Component {
 
         if(result.token) {
         this.props.onAuth(result.id, result.token)
+        this.setState({success: true})
         }
         
         else {
@@ -45,6 +46,7 @@ class Authorization extends React.Component {
             <input type="password" onChange={this.onPasswordChange}/>
           </div>
             <button className="auth-button"  onClick={this.onAuth}>LOGIN</button>
+            {/* <div className='auth-error'>Account with this username already exist</div> */}
           </div>
         </div>
 

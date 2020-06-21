@@ -35,9 +35,24 @@ class TrainingBody extends React.Component {
                   </div>
               )}
             </div>
-              <div className="exercises">{this.state.exercises.map(item =>
-              <div>{item.description}</div>
-               )}</div>
+                <div className='exercises'>
+                    <h2>Exercises</h2>
+              {this.state.exercises.map(item =>
+                <div className="exercise">
+                    <div className="exercise-div-img">
+                        <img className='exercise-img' src={item.imageSource}/>
+                    </div>
+                    <div className="exercise-info">
+                        <h2>{item.name}</h2>
+                        <div className='counts'>
+                            <div>count: {item.count}</div>
+                            <div>reiteration: {item.reiteration}</div>
+                        </div>
+                        <div className="exercise-description">{item.description}</div>
+                    </div>
+                </div>
+               )}
+               </div>
         </div>
         )
     }
