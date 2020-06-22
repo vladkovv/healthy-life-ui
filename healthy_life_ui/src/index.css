@@ -479,6 +479,29 @@ color: #A2A2A2;
   background-color: #3c72e7;
 }
 
+.unfollow-button {
+  align-self: center;
+  width: 150px;
+  height: 40px;
+  margin-top: auto;
+  margin-bottom: auto;
+  background-color: #3C95E7;
+  color: #F8F8F8;
+  border: none;
+  border-radius: 6px;
+  transition: all 0.3s;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.unfollow-button:focus {
+  outline: none;
+}
+
+.unfollow-button:hover {
+  background-color: #3c72e7;
+}
+
 .training-content-body {
   background-color: #FAFBFC;
   width: 100%;
