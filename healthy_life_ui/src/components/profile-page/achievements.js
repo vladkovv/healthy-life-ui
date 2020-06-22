@@ -7,10 +7,12 @@ class Achievements extends React.Component {
 
 
     gettingUserAchievments = async () => {
-        let response = await fetch(`${this.props.url}/users/${this.props.id}/achievements`)
+        let response = await fetch(`${this.props.url}/users/${this.props.id}/achievements/score`)
         let data = await response.json() 
         data.map(item => {
-            const obj = {name: item.name, description: item.description, imgSource: item.imageSource, id: item.id}
+            const obj = {name: item.achievement.name, description: item.achievement.description,
+                imgSource: item.achievement.imageSource, id: item.achievement.id, measure: item.achievement.measure,
+                goal: item.achievement.goal, score: item.score}
             this.setState({
                 achieves: [...this.state.achieves, obj]   
                })
@@ -33,8 +35,9 @@ class Achievements extends React.Component {
                                 <img alt='' src={item.imgSource} />
                             </div>
                             <div className='achieve-card-description'>{item.description}</div>
+                            <div className='achieve-card-goal'>{item.score} / {item.goal} {item.measure}</div>
                         </div>
-                        )
+                    )
 
                     
                 }
