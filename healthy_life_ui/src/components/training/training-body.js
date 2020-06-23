@@ -37,8 +37,8 @@ class TrainingBody extends React.Component {
                     <div className="exercise-info">
                         <h2>{item.name}</h2>
                         <div className='counts'>
-                            <div>count: {item.count}</div>
-                            <div>reiteration: {item.reiteration}</div>
+                            <div>{item.count}</div>
+                            <div>{item.measure}</div>
                         </div>
                         <div className="exercise-description">{item.description}</div>
                     </div>

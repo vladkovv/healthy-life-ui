@@ -588,12 +588,14 @@ color: #A2A2A2;
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
   margin-top: 10px;
-}
+  justify-content: center;
+ }
+
 
 .counts > div {
   font-weight: 600;
+  margin-right: 5px;
 }
 
 .exercise-description {
@@ -851,4 +853,71 @@ background-color: #04bf3b;
   background-color: red;
   color: #ffffff;
   border-radius: 10px;
+}
+
+.add-record-button {
+  height: 32px;
+  margin-top: 20px;
+  border: none;
+  background-color: #7289DA;
+  border-radius: 5px;
+  color: #ffffff;
+  width: 150px;
+}
+
+.add-record-button:focus {
+  outline: none;
+}
+
+.add-record-button:hover {
+  background-color: #7279DA;
+}
+.new-record {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 100px;
+}
+
+.save-record-button {
+  height: 32px;
+  width: 150px;
+  margin-top: 20px;
+  border: none;
+  background-color: #19cf4f;
+  border-radius: 5px;
+  color: #ffffff;
+}
+
+.save-record-button:focus {
+  outline: none;
+}
+
+.save-record-button:hover {
+  background-color: #04bf3b;
+}
+
+.cancel-record-button {
+  height: 32px;
+  width: 150px;
+  margin-top: 20px;
+  border: none;
+  background-color: #EC5163;
+  border-radius: 5px;
+  color: #ffffff;
+}
+
+.cancel-record-button:focus {
+  outline: none;
+}
+
+.cancel-record-button:hover {
+  background-color: #f74056;
+}
+
+.record-buttons {
+  width: 500px;
+  display: flex;
+  justify-content: space-around;
 }
