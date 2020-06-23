@@ -12,10 +12,10 @@ import Records from './records';
 import Reports from './reports';
 
 class Profile extends React.Component {
-    state = {}
+    state = {referrer: false, security: true}
 
     
-
+    
     componentDidMount() {
         document.querySelector('.active-link').classList.add('active');
         document.querySelectorAll('.not-active-link').forEach(item => item.addEventListener('click', () => {
@@ -23,10 +23,23 @@ class Profile extends React.Component {
                 document.querySelector('.active-link').className = 'active-link';
             }
         }));
+        let id = Number(localStorage.getItem('id'))
+        let myId = Number(localStorage.getItem('myId'))
+        if(!id === myId) {
+            this.setState({security: false})
+        }
     }
 
+    handleRedirectToTraining = (e) => {
+        let trainId = Number(e.target.id)
+        localStorage.setItem('trainId', trainId)
+        this.setState({referrer: !this.state.referrer}) 
+    }
 
     render() {
+        if(this.state.referrer) {
+            return <Redirect to={'/training'} />
+        }
     return(
         <BrowserRouter>
         <Redirect to={'/profile/personal'}/>
@@ -55,7 +68,7 @@ class Profile extends React.Component {
             </div>
             <Route  path='/profile/personal' render={(props) => <Personal url={this.props.url}  id={this.props.id}  {...props}/>}/>
             <Route  path='/profile/security' render={(props) => <Security url={this.props.url}  id={this.props.id}  {...props}/>}/>
-            <Route  path='/profile/trainings' render={(props) => <ProfileTrainings url={this.props.url}  id={this.props.id}  {...props}/>}/>
+            <Route  path='/profile/trainings' render={(props) => <ProfileTrainings url={this.props.url}  id={this.props.id} handleClick={this.handleRedirectToTraining}  {...props}/>}/>
             <Route  path='/profile/achieves' render={(props) => <Achievements url={this.props.url}  id={this.props.id}  {...props}/>}/>
             <Route  path='/profile/records' render={(props) => <Records url={this.props.url}  id={this.props.id}  {...props}/>}/>
             <Route  path='/profile/reports' render={(props) => <Reports url={this.props.url}  id={this.props.id}  {...props}/>}/>

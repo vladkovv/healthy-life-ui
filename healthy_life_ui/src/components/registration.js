@@ -26,9 +26,13 @@ class Registration extends React.Component {
             body: JSON.stringify({username: this.state.username, password: this.state.password,  email: this.state.email})
         })
         let result = await response.json();
+        console.log(result)
 
         if(result.username) {
             this.setState({success: true})
+        }
+        if(result.error) {
+            alert('Account with this username is already exist')
         }
     }
 

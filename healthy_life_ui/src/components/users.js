@@ -10,7 +10,8 @@ class Users extends React.Component{
     state = {
         users: [],
         currPage: 1,
-        countPages: 0
+        countPages: 0,
+        referrer: false
     }
 
     gettingData = async () => {
@@ -37,10 +38,20 @@ class Users extends React.Component{
         this.setState({
           users: newState
         })
-        // return await fetch(`${this.props.url}/users/${removeUserId}`, {
-        //   method: 'DELETE'
-        // })
+        return await fetch(`${this.props.url}/users/${removeUserId}`, {
+          method: 'DELETE'
+        })
       }
+
+      redirectUser = (e) => {
+        let id = localStorage.getItem('id')
+        if(!localStorage.myId) {
+        localStorage.setItem('myId', id)
+        }
+        this.setState({referrer: true})
+        localStorage.setItem('id', e.target.id)
+
+      } 
 
       handlePagehanged = async (page) => {
         this.setState({
@@ -61,6 +72,10 @@ render() {
   
   if(!this.props.status) {
     return <Redirect to={'/auth'} />
+  }
+
+  if(this.state.referrer) {
+    return <Redirect to={'/profile'} />
   }
 
 return(
@@ -86,7 +101,7 @@ return(
           <td>{item.firstName}</td>
           <td>{item.lastName}</td>
           <td>{item.email}</td>
-          <td className="users-button">
+          <td id={item.id} className="users-button" onClick={this.redirectUser}>
           <CreateIcon id={item.id} className="users-icon" />
           </td>
           <td id={item.id} className="users-button" onClick={this.deleteUser}>

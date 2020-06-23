@@ -4,21 +4,28 @@ import { NavLink } from 'react-router-dom';
 
 const Header = (props) => {
 
+   const clearId = () => {
+       if(localStorage.myId) {
+        let myId = localStorage.getItem('myId')
+        localStorage.setItem('id', myId)
+       }
+    }
+
     if(!props.status) {
         return (
             <div className="header-before-auth">
 
             <div>
-                <NavLink to="/">Trainings</NavLink>
+                <NavLink to="/" onClick={clearId}>Trainings</NavLink>
             </div>
 
                
             <div>
-                <NavLink to="/reg">Sign up</NavLink>
+                <NavLink to="/reg" onClick={clearId}>Sign up</NavLink>
             </div>
 
             <div>
-                <NavLink to="/auth">Sign in</NavLink>
+                <NavLink to="/auth" onClick={clearId}>Sign in</NavLink>
             </div>
 
     </div>
@@ -28,21 +35,19 @@ const Header = (props) => {
     return (
         <div className="header-before-auth">
             <div>
-                <NavLink to="/">Trainings</NavLink>
+                <NavLink to="/" onClick={clearId}>Trainings</NavLink>
             </div>
 
             <div>
                 <NavLink to='/' onClick={props.logOut}>Log out</NavLink>
             </div>
             <div>
-                <NavLink to="/profile">Profile</NavLink>
+                <NavLink to="/profile" onClick={clearId}>Profile</NavLink>
             </div>
 
             <div>
-                <NavLink to="/users">Users</NavLink>
-            </div>
-
-            
+                <NavLink to="/users" onClick={clearId}>Users</NavLink>
+            </div> 
         </div>
     )
 } 

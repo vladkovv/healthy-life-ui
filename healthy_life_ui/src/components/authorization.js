@@ -30,7 +30,7 @@ class Authorization extends React.Component {
         }
         
         else {
-          alert('Проверьте логин/пароль')
+          alert('Login or password is not correct')
         }
     }
 

@@ -462,7 +462,7 @@ color: #A2A2A2;
   width: 150px;
   height: 40px;
   margin-top: auto;
-  margin-bottom: auto;
+  margin-bottom: 8px;
   background-color: #3C95E7;
   color: #F8F8F8;
   border: none;
@@ -763,6 +763,7 @@ background-color: #04bf3b;
   margin-top: 0px;
   border: 2px solid #CDDAEB;
   border-top: none;
+  flex-wrap: wrap;
 }
 
 .achieve-card {
@@ -795,6 +796,7 @@ background-color: #04bf3b;
  text-align: center;
  margin-top: auto;
  margin-bottom: auto;
+ width: 90%;
 }
 
 .achieve-card > h2 {
@@ -1036,4 +1038,103 @@ background-color: #04bf3b;
 .stats-date > div > h2 {
   font-size: medium;
   font-weight: 600;
+}
+
+.training-creation-body {
+  display: flex;
+  background-color: #DCDCDC;
+  justify-content: center;
+  min-height: 93vh;
+  width: 100%;
+}
+
+.training-creation-content {
+  background-color: #FAFBFC;
+  margin-top: 20px;
+  width: 70%;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border: 2px solid #CDDAEB;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.training-creation-content > h1 {
+  margin-top: 20px;
+}
+
+.first-creation-inputs {
+  display: flex;
+  width: 90%;
+  justify-content: space-around;
+  margin-top: 30px;
+}
+
+.first-creation-inputs > div > h2 {
+  font-size: medium;
+  margin: 1px;
+}
+
+.first-creation-inputs > div > input {
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #D9D9D9;
+  height: 32px;
+  width: 200px;
+  margin-bottom: 30px;
+}
+
+.first-creation-inputs > div > input:focus {
+  outline: none;
+  border: 2px solid #CDDAEB;
+}
+
+textarea {
+  resize: none;
+  width: 620px;
+  height: 90px;
+  max-height: 300px;
+}
+textarea:focus {
+  outline: none;
+}
+
+.create-description > h2 {
+  font-size: medium;
+  margin-top: 15px;
+}
+
+.create-description {
+  margin-bottom: 20px;
+}
+
+.creation-days-name {
+  font-size: xx-large;
+  font-weight: 600;
+}
+
+.delete-train-button {
+  align-self: center;
+  height: 32px;
+  width: 150px;
+  margin-top: auto;
+  border: none;
+  background-color: #EC5163;
+  border-radius: 5px;
+  color: #ffffff;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.delete-train-button:focus {
+  outline: none;
+}
+
+.delete-train-button:hover {
+  background-color: #f74056;
+}
+
+.followers {
+  font-weight: 600;
+  margin-bottom: auto;
 }

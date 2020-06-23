@@ -7,7 +7,8 @@ class Achievements extends React.Component {
 
 
     gettingUserAchievments = async () => {
-        let response = await fetch(`${this.props.url}/users/${this.props.id}/achievements/score`)
+        let id = localStorage.getItem('id')
+        let response = await fetch(`${this.props.url}/users/${id}/achievements/score`)
         let data = await response.json() 
         data.map(item => {
             const obj = {name: item.achievement.name, description: item.achievement.description,

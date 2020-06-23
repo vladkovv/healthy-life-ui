@@ -5,13 +5,13 @@ import { Fade } from '@material-ui/core';
 
 class Training extends React.Component {
 
-    state = {imageSource: '', name: '', description: '', days: []}
+    state = {imageSource: '', name: '', description: '', days: [], trainDeleted: false}
 
     gettingTrainInfo = async () => {
         let id = localStorage.getItem('trainId')
         let response =  await fetch(`${this.props.url}/trainings/${id}`)
         let data = await response.json()
-        this.setState({imageSource: data.imageSource, name: data.name, description: data.description, days: data.daysOfTrainings})
+        this.setState({imageSource: data.imageSource, name: data.name, description: data.description, days: data.daysOfTrainings, followers: data.followersCount})
     }
 
     followButtonClick = (e) => { 
@@ -47,6 +47,16 @@ class Training extends React.Component {
         })
     } 
 
+    deleteTrainingFormBD = async () => {
+        let trainId = localStorage.getItem('trainId')
+        let response = await fetch(`${this.props.url}/trainings/${trainId}`, {
+            method: 'DELETE'
+        })
+        let data = response.json()
+        this.setState({trainDeleted: true})
+        
+    }
+
     checkingFollow = async () => {
         let currId = localStorage.getItem('id')
         let trainId = localStorage.getItem('trainId')
@@ -63,10 +73,15 @@ class Training extends React.Component {
 
     componentDidMount() {
         this.gettingTrainInfo()
+        if(this.props.status) {
         this.checkingFollow()
     }
+}
 
     render() { 
+        if(this.state.trainDeleted) {
+            return <Redirect to={'/'} /> 
+        }
         return(                       
         <div className='training-body'>
             <Fade in>
@@ -76,13 +91,14 @@ class Training extends React.Component {
                     <div>
                         <h1>{this.state.name}</h1>
                         <h2>{this.state.description}</h2>
-                        <button className="follow-button" onClick={this.followButtonClick}>Follow</button>
+                        {this.props.status && <button className="follow-button" onClick={this.followButtonClick}>Follow</button>}
+                        <div className='followers'>Followers: {this.state.followers}</div>
+                        <button className='delete-train-button' onClick={this.deleteTrainingFormBD}>delete</button>
                     </div>
                 </div>
                 <TrainingBody url={this.props.url} days={this.state.days}/>
             </div>
             </Fade>
-            <Redirect to={'/training/day/1'}/>
         </div>
     )
     }
