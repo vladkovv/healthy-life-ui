@@ -28,8 +28,9 @@ class Records extends React.Component {
         this.setState({newRecordForm: false})
         const obj = {id: data.id, runDate: this.state.runDate, startTime: this.state.startTime, endTime: this.state.endTime, distance: this.state.distance, user: {id: id}}
         this.setState({
-            records: [...this.state.records, obj]   
+            records: [...this.state.records, obj] 
            })
+           console.log(obj)
     }
 
     runDateChange = (e) => {

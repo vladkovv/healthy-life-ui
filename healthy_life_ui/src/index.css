@@ -774,7 +774,7 @@ background-color: #04bf3b;
   margin-bottom: 20px;
   width: 32%; 
   align-items: center;
-  min-height: 320px;
+  min-height: 340px;
   flex-wrap: wrap;
 }
 
@@ -811,7 +811,6 @@ background-color: #04bf3b;
   border-top: none;
   align-items: center;
   padding-bottom: 20px;
-
 }
 
 .profile-record {
@@ -920,4 +919,121 @@ background-color: #04bf3b;
   width: 500px;
   display: flex;
   justify-content: space-around;
+}
+
+
+.content-reports {
+  background-color: #FAFBFC;
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin-top: 0px;
+  border: 2px solid #CDDAEB;
+  border-top: none;
+  padding-bottom: 20px;
+}
+
+.content-reports > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.overall-statistics {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-bottom: 30px;
+}
+
+.stat-card {
+  display: flex;
+  width: 29%;
+  flex-direction: column;
+  border: 2px solid #B4B8B9;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+  height: 60px;
+  padding-top: 5px;
+}
+
+.stat-card > h2 {
+  font-size: large;
+}
+
+.stat-card > div {
+  font-weight: 600; 
+}
+
+.overall-name {
+  font-size: x-large;
+  margin-top: 30px;  
+  margin-bottom: 20px;
+}
+
+.detailed-name {
+  font-size: x-large;
+  margin-top: 30px;  
+  margin-bottom: 10px;
+}
+
+.stats-header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 50%;
+  height: 60px;
+  /* margin-top: 10px; */
+  border: 2px solid #CDDAEB;
+  border-radius: 15px;
+  background-color: #FAFBFC;
+}
+.stats-header > div > a {
+  text-decoration: none;
+  color: #B4B8B9;
+  padding-bottom: 10px;
+  font-weight: 600;
+  
+}
+
+.stats-header > div > a:hover {
+  border-bottom: 2px solid #D1D5DA;
+}
+
+.stats-header > div > a.active {
+  color: #333333;
+  padding-bottom: 18px;
+  border-bottom: 2px solid blue;
+}
+
+.week-stats{
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-bottom: 50px;
+  border-bottom: 2px dashed #B4B8B9;
+  padding-bottom: 90px;
+}
+
+.stats-date {
+  display: flex;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  width: 100%;
+  justify-content: center;
+}
+
+.stats-date > div {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.stats-date > div > h2 {
+  font-size: medium;
+  font-weight: 600;
 }
